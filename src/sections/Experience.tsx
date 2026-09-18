@@ -1,59 +1,58 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Briefcase, Building2, Calendar, MapPin } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Briefcase, Building2, Calendar, MapPin } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   {
-    company: 'SBTC',
-    subtitle: 'Said Bawazier Trading Company - Indomie KSA',
-    role: 'ERP Software Developer',
-    location: 'Jeddah, Saudi Arabia',
-    type: 'On-Site - Full-Time',
-    period: 'May 2025 – Present',
+    company: "SBTC",
+    subtitle: "Said Bawazier Trading Company - Indomie KSA",
+    role: "Full Stack Software Engineer",
+    location: "Jeddah, Saudi Arabia",
+    type: "On-Site - Full-Time",
+    period: "May 2025 – Present",
     description: [
-      'Design and develop ERP web pages using ASP.NET C# and SQL Server',
-      'Write stored procedures (SPs), build custom reports, and implement business logic',
-      'Support real-time operational workflows with UI development and backend integration',
-      'Develop and maintain automated .NET APIs for daily data submission to government systems',
-      'Ensure compliance and system reliability for enterprise-grade operations',
+      "Led ERP API integration with the General Food Security Authority, automating operational workflows and reducing manual processing efforts by approximately 80%.",
+      "Designed, developed, and maintained 15+ production ERP modules using ASP.NET, C#, SQL Server, and JavaScript, supporting sales operations, approvals, reporting, employee workflows, and business process automation.",
+      "Developed a full-stack internal reporting platform using ASP.NET Core Web API, C#, Next.js, and SQL Server, with JWT authentication, dynamic reporting, and PDF/Excel processing.",
+      "Took ownership of and enhanced a handed-over enterprise sales analytics platform using Python, Django REST Framework, React, and PostgreSQL, supporting ERP data processing, dashboards, reporting, forecasting, access controls, and secure authentication.",
     ],
-    color: 'from-yellow-500 to-orange-500',
+    color: "from-yellow-500 to-orange-500",
     icon: Building2,
   },
   {
-    company: 'Luday SE',
-    subtitle: 'Swedish Tech Company',
-    role: 'Full Stack Developer',
-    location: 'Gothenburg, Sweden',
-    type: 'Remote - Internship',
-    period: 'Sep 2024 – Feb 2025',
+    company: "Luday SE",
+    subtitle: "Swedish Tech Company",
+    role: "Full Stack Developer",
+    location: "Gothenburg, Sweden",
+    type: "Remote - Internship",
+    period: "Sep 2024 – Feb 2025",
     description: [
-      'Developed and maintained backend APIs using Python (Flask)',
-      'Implemented modern React-based frontend interfaces',
-      'Built and integrated RESTful services with seamless data flow',
-      'Improved application performance and reliability',
-      'Worked in Agile/Scrum environment with sprint planning and code reviews',
+      "Developed and maintained backend APIs using Python (Flask)",
+      "Implemented modern React-based frontend interfaces",
+      "Built and integrated RESTful services with seamless data flow",
+      "Improved application performance and reliability",
+      "Worked in Agile/Scrum environment with sprint planning and code reviews",
     ],
-    color: 'from-purple-500 to-pink-500',
+    color: "from-purple-500 to-pink-500",
     icon: Briefcase,
   },
   {
-    company: 'Lime Light Renhold AS',
-    subtitle: 'Norwegian Cleaning Services',
-    role: 'Full Stack Developer',
-    location: 'Oslo, Norway',
-    type: 'Remote - Internship',
-    period: 'Jul 2023 – Dec 2023',
+    company: "Lime Light Renhold AS",
+    subtitle: "Norwegian Cleaning Services",
+    role: "Full Stack Developer",
+    location: "Oslo, Norway",
+    type: "Remote - Internship",
+    period: "Jul 2023 – Dec 2023",
     description: [
-      'Designed and developed responsive web applications using JavaScript, HTML, CSS',
-      'Implemented backend logic with Python for data processing',
-      'Collaborated with designers and developers in cross-functional teams',
-      'Used Git for version control and maintained clean, scalable code',
+      "Designed and developed responsive web applications using JavaScript, HTML, CSS",
+      "Implemented backend logic with Python for data processing",
+      "Collaborated with designers and developers in cross-functional teams",
+      "Used Git for version control and maintained clean, scalable code",
     ],
-    color: 'from-cyan-500 to-blue-500',
+    color: "from-cyan-500 to-blue-500",
     icon: Briefcase,
   },
 ];
@@ -74,13 +73,13 @@ const Experience = () => {
           opacity: 1,
           y: 0,
           duration: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: headingRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
+            start: "top 85%",
+            toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // Timeline line animation
@@ -90,18 +89,18 @@ const Experience = () => {
         {
           scaleY: 1,
           duration: 2,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: timelineRef.current,
-            start: 'top 80%',
-            end: 'bottom 20%',
+            start: "top 80%",
+            end: "bottom 20%",
             scrub: 1,
           },
-        }
+        },
       );
 
       // Experience cards animation
-      const cards = timelineRef.current?.querySelectorAll('.experience-card');
+      const cards = timelineRef.current?.querySelectorAll(".experience-card");
       if (cards) {
         cards.forEach((card, index) => {
           const isLeft = index % 2 === 0;
@@ -117,19 +116,19 @@ const Experience = () => {
               x: 0,
               rotateY: 0,
               duration: 1,
-              ease: 'power3.out',
+              ease: "power3.out",
               scrollTrigger: {
                 trigger: card,
-                start: 'top 85%',
-                toggleActions: 'play none none none',
+                start: "top 85%",
+                toggleActions: "play none none none",
               },
-            }
+            },
           );
         });
       }
 
       // Timeline dots animation
-      const dots = timelineRef.current?.querySelectorAll('.timeline-dot');
+      const dots = timelineRef.current?.querySelectorAll(".timeline-dot");
       if (dots) {
         gsap.fromTo(
           dots,
@@ -139,13 +138,13 @@ const Experience = () => {
             opacity: 1,
             duration: 0.5,
             stagger: 0.3,
-            ease: 'back.out(2)',
+            ease: "back.out(2)",
             scrollTrigger: {
               trigger: timelineRef.current,
-              start: 'top 80%',
-              toggleActions: 'play none none none',
+              start: "top 80%",
+              toggleActions: "play none none none",
             },
-          }
+          },
         );
       }
     }, sectionRef);
@@ -174,8 +173,8 @@ const Experience = () => {
             My Professional <span className="gradient-text">Journey</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From internships in Sweden and Norway to a full-time role at a major Saudi company,
-            I've built a diverse and impactful career.
+            From internships in Sweden and Norway to a full-time role at a major
+            Saudi company, I've built a diverse and impactful career.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mt-6" />
         </div>
@@ -196,7 +195,7 @@ const Experience = () => {
                 <div
                   key={index}
                   className={`relative lg:grid lg:grid-cols-2 lg:gap-8 ${
-                    index > 0 ? 'lg:mt-12' : ''
+                    index > 0 ? "lg:mt-12" : ""
                   }`}
                 >
                   {/* Timeline dot - desktop */}
@@ -209,7 +208,7 @@ const Experience = () => {
                   {/* Card */}
                   <div
                     className={`experience-card ${
-                      isLeft ? 'lg:pr-12' : 'lg:col-start-2 lg:pl-12'
+                      isLeft ? "lg:pr-12" : "lg:col-start-2 lg:pl-12"
                     }`}
                   >
                     <div
@@ -225,7 +224,9 @@ const Experience = () => {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-xl font-bold">{exp.company}</h3>
-                          <p className="text-sm text-muted-foreground">{exp.subtitle}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {exp.subtitle}
+                          </p>
                         </div>
                       </div>
 

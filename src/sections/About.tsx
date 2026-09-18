@@ -1,52 +1,53 @@
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Code2, Database, Globe, Layers, Sparkles, Zap } from 'lucide-react';
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Code2, Database, Globe, Layers, Sparkles, Zap } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const highlights = [
   {
     icon: Code2,
-    title: 'Clean Code',
-    description: 'Writing maintainable, scalable code with best practices',
-    color: 'text-purple-400',
-    glow: 'glow-purple',
+    title: "Clean Code",
+    description: "Writing maintainable, scalable code with best practices",
+    color: "text-purple-400",
+    glow: "glow-purple",
   },
   {
     icon: Database,
-    title: 'Database Design',
-    description: 'Expert in SQL Server and efficient data architecture',
-    color: 'text-cyan-400',
-    glow: 'glow-cyan',
+    title: "Database & Backend",
+    description:
+      "SQL Server, PostgreSQL, stored procedures, and backend development",
+    color: "text-cyan-400",
+    glow: "glow-cyan",
   },
   {
     icon: Globe,
-    title: 'Global Experience',
-    description: 'Worked remotely with teams across Sweden & Norway',
-    color: 'text-pink-400',
-    glow: 'glow-pink',
+    title: "Global Experience",
+    description: "Worked remotely with teams across Sweden & Norway",
+    color: "text-pink-400",
+    glow: "glow-pink",
   },
   {
     icon: Layers,
-    title: 'Full Stack',
-    description: 'End-to-end development from frontend to backend',
-    color: 'text-blue-400',
-    glow: 'hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]',
+    title: "Full Stack",
+    description: "End-to-end development from frontend to backend",
+    color: "text-blue-400",
+    glow: "hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]",
   },
   {
     icon: Zap,
-    title: 'Performance',
-    description: 'Optimizing applications for speed and efficiency',
-    color: 'text-yellow-400',
-    glow: 'hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]',
+    title: "API & Automation",
+    description: "ERP integrations, REST APIs, and workflow automation",
+    color: "text-yellow-400",
+    glow: "hover:shadow-[0_0_20px_rgba(250,204,21,0.5)]",
   },
   {
     icon: Sparkles,
-    title: 'Modern Tech',
-    description: 'Staying current with latest technologies and trends',
-    color: 'text-green-400',
-    glow: 'hover:shadow-[0_0_20px_rgba(74,222,128,0.5)]',
+    title: "AI-Powered Apps",
+    description: "Building intelligent reporting tools with LLM integration",
+    color: "text-green-400",
+    glow: "hover:shadow-[0_0_20px_rgba(74,222,128,0.5)]",
   },
 ];
 
@@ -66,13 +67,13 @@ const About = () => {
           opacity: 1,
           y: 0,
           duration: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: headingRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
+            start: "top 85%",
+            toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // Content animation
@@ -83,17 +84,17 @@ const About = () => {
           opacity: 1,
           x: 0,
           duration: 1,
-          ease: 'power3.out',
+          ease: "power3.out",
           scrollTrigger: {
             trigger: contentRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none',
+            start: "top 80%",
+            toggleActions: "play none none none",
           },
-        }
+        },
       );
 
       // Cards stagger animation
-      const cards = cardsRef.current?.querySelectorAll('.highlight-card');
+      const cards = cardsRef.current?.querySelectorAll(".highlight-card");
       if (cards) {
         gsap.fromTo(
           cards,
@@ -104,13 +105,13 @@ const About = () => {
             scale: 1,
             duration: 0.6,
             stagger: 0.1,
-            ease: 'power3.out',
+            ease: "power3.out",
             scrollTrigger: {
               trigger: cardsRef.current,
-              start: 'top 80%',
-              toggleActions: 'play none none none',
+              start: "top 80%",
+              toggleActions: "play none none none",
             },
-          }
+          },
         );
       }
     }, sectionRef);
@@ -137,7 +138,7 @@ const About = () => {
             About Me
           </span>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-            Passionate About{' '}
+            Passionate About{" "}
             <span className="gradient-text">Building Solutions</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full" />
@@ -149,41 +150,70 @@ const About = () => {
           <div ref={contentRef} className="space-y-6">
             <div className="glass rounded-2xl p-8">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I'm a <span className="text-foreground font-semibold">Software Engineer</span> and{' '}
-                <span className="text-foreground font-semibold">Full-Stack Developer</span> with
-                strong hands-on experience in C#, React, Python, JavaScript, HTML, and CSS.
+                I'm a{" "}
+                <span className="text-foreground font-semibold">
+                  Full-Stack Software Engineer
+                </span>{" "}
+                with hands-on experience building enterprise applications using
+                C#, ASP.NET Core, Python, Django, React, Next.js, SQL Server,
+                and PostgreSQL.
               </p>
+
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I have a proven ability to design and build{' '}
-                <span className="text-cyan-400">scalable web applications</span>,{' '}
-                <span className="text-purple-400">APIs</span>, and{' '}
-                <span className="text-pink-400">enterprise-grade systems</span>, with a focus on
-                clean architecture, performance, and real-world business requirements.
+                I specialize in building{" "}
+                <span className="text-cyan-400">enterprise software</span>,{" "}
+                <span className="text-purple-400">REST APIs</span>, and{" "}
+                <span className="text-pink-400">
+                  reporting and analytics platforms
+                </span>
+                , with experience in ERP systems, workflow automation, API
+                integration, and AI-powered applications.
               </p>
+
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Currently working at <span className="text-foreground font-semibold">SBTC</span>{' '}
-                (Said Bawazier Trading Company - Indomie KSA) as an ERP Software Developer, where I
-                design and develop ERP web pages using ASP.NET C# and SQL Server.
+                Currently working at{" "}
+                <span className="text-foreground font-semibold">SBTC</span>{" "}
+                (Said Bawazier Trading Company - Indomie KSA) as a{" "}
+                <span className="text-foreground font-semibold">
+                  Full-Stack Software Engineer
+                </span>
+                , developing and integrating ERP systems, reporting platforms,
+                and analytics applications across .NET and Python-based
+                technology stacks.
               </p>
             </div>
 
             {/* Quick facts */}
             <div className="grid grid-cols-2 gap-4">
               <div className="glass rounded-xl p-4 text-center">
-                <div className="text-2xl font-bold text-cyan-400 mb-1">Lebanese</div>
+                <div className="text-2xl font-bold text-cyan-400 mb-1">
+                  Lebanese
+                </div>
                 <div className="text-sm text-muted-foreground">Nationality</div>
               </div>
               <div className="glass rounded-xl p-4 text-center">
-                <div className="text-2xl font-bold text-purple-400 mb-1">Bilingual</div>
-                <div className="text-sm text-muted-foreground">English & Arabic</div>
+                <div className="text-2xl font-bold text-purple-400 mb-1">
+                  Bilingual
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  English & Arabic
+                </div>
               </div>
               <div className="glass rounded-xl p-4 text-center">
-                <div className="text-2xl font-bold text-pink-400 mb-1">Valid Iqama</div>
-                <div className="text-sm text-muted-foreground">Transferable</div>
+                <div className="text-2xl font-bold text-pink-400 mb-1">
+                  Valid Iqama
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Transferable
+                </div>
               </div>
               <div className="glass rounded-xl p-4 text-center">
-                <div className="text-2xl font-bold text-green-400 mb-1">Open</div>
-                <div className="text-sm text-muted-foreground">To Opportunities</div>
+                <div className="text-2xl font-bold text-green-400 mb-1">
+                  Open
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  To Opportunities
+                </div>
               </div>
             </div>
           </div>
@@ -202,7 +232,9 @@ const About = () => {
                   <item.icon className={`${item.color}`} size={24} />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>
