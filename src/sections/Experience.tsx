@@ -12,7 +12,7 @@ const experiences = [
     role: "Full Stack Software Engineer",
     location: "Jeddah, Saudi Arabia",
     type: "On-Site - Full-Time",
-    period: "May 2025 – Present",
+    period: "May 2024 – Present",
     description: [
       "Led ERP API integration with the General Food Security Authority, automating operational workflows and reducing manual processing efforts by approximately 80%.",
       "Designed, developed, and maintained 15+ production ERP modules using ASP.NET, C#, SQL Server, and JavaScript, supporting sales operations, approvals, reporting, employee workflows, and business process automation.",
@@ -27,8 +27,8 @@ const experiences = [
     subtitle: "Swedish Tech Company",
     role: "Full Stack Developer",
     location: "Gothenburg, Sweden",
-    type: "Remote - Internship",
-    period: "Sep 2024 – Feb 2025",
+    type: "Remote - Project-Based",
+    period: "Jan 2024 – Apr 2024",
     description: [
       "Developed and maintained backend APIs using Python (Flask)",
       "Implemented modern React-based frontend interfaces",
